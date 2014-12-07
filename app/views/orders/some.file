@@ -1,0 +1,12 @@
+<%= form_for(@order) do |f| %>
+    <p>
+        <strong>Status:</strong>
+        <select name="status">
+            <option value="Pending">Pending</option>
+            <option value="Ready">Ready</option>
+        </select>
+    </p>
+    <div class="actions">
+      <% f.submit 'Update' %>
+    </div>
+<% end %>

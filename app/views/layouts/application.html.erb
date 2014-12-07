@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<% if user_signed_in? %>
+<header>
+  <span>Hello, <%= current_user.email%></span>
+  <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+  <span> Admin: <%= current_user.admin? %></span>
+  <% if !current_user.discount.nil? %>
+    <span> Discount: <%= current_user.discount %>%</span>
+  <% end %>
+</header>
+<% end %>
+
 <%= yield %>
 
 </body>

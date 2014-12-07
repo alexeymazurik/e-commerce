@@ -1,0 +1,34 @@
+<p id="notice"><%= notice  %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @order.user_id %>
+</p>
+
+<p>
+  <strong>Supply:</strong>
+  <%= @order.supply_id %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @order.count %>
+</p>
+
+<p>
+  <strong>Total price:</strong>
+  <%= @order.total %>
+</p>
+
+<p>
+  <strong>Delivery Date:</strong>
+  <%= @order.deliveryDate %>
+</p>
+
+<p>
+  <strong>Query status:</strong>
+  <%= @order.status %>
+</p>
+
+<%= link_to 'Back to shopping!', supplies_path %>
+<%= link_to 'Back', orders_path %>

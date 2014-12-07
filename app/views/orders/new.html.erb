@@ -1,0 +1,39 @@
+<h2>Confirm your order</h2>
+
+<p>
+  <strong>Supply title: </strong>
+  <%= @supply.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @supply.price %> UAH
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Delivery Date:</strong>
+  <%= Date.today + 1 %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  Pending
+</p>
+
+<%= form_for(@order, :url=>{:action=>'create'}) do |f| %>
+        <%= f.hidden_field :supply_id, :value => @supply.id %>
+        <%= f.hidden_field :status, :value => "Pending" %>
+        <%= f.hidden_field :deliveryDate, :value => Date.today + 1 %>
+
+        <%= f.label :count %> <br/>
+        <%= f.text_field :count %>
+
+        <div class="actions">
+          <%= f.submit 'Create' %>
+        </div>
+<% end %>
