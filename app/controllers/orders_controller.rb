@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
 
   def index
     if current_user.admin?
-      @orders = Order.all
+      @orders = Order.order(:user_id).all
     else
       @orders = Order.where("user_id = ?", current_user.id.to_s)
     end
@@ -51,7 +51,9 @@ class OrdersController < ApplicationController
   def update
 
     if params[:order][:status] == 'Ready'
-      params[:order][:deliveryDate] == Date.today
+      params[:order][:deliveryDate] = Date.today
+    elsif params[:order][:status] == 'Rejected'
+      params[:order][:deliveryDate] = ''
     end
 
     respond_to do |format|
@@ -80,6 +82,10 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+  end
+
+  def info
+
   end
 
   private

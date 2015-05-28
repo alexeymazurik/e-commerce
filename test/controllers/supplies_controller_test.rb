@@ -1,7 +1,10 @@
 require 'test_helper'
 
+include Devise::TestHelpers
+
 class SuppliesControllerTest < ActionController::TestCase
   setup do
+    sign_in User.first
     @supply = supplies(:one)
   end
 

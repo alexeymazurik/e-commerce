@@ -1,34 +1,46 @@
-<p id="notice"><%= notice  %></p>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel-default panel">
+      <div class="panel-heading">
+        <h4>Order # <%= @order.id %></h4>
+      </div>
+      <div class="panel-body">
 
-<p>
-  <strong>User:</strong>
-  <%= @order.user_id %>
-</p>
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Supply:</strong>
-  <%= @order.supply_id %>
-</p>
+        <p>
+          <strong>User:</strong>
+          <%= @order.user_id %>
+        </p>
 
-<p>
-  <strong>Count:</strong>
-  <%= @order.count %>
-</p>
+        <p>
+          <strong>Supply:</strong>
+          <%= @order.supply_id %>
+        </p>
 
-<p>
-  <strong>Total price:</strong>
-  <%= @order.total %>
-</p>
+        <p>
+          <strong>Count:</strong>
+          <%= @order.count %>
+        </p>
 
-<p>
-  <strong>Delivery Date:</strong>
-  <%= @order.deliveryDate %>
-</p>
+        <p>
+          <strong>Total price:</strong>
+          <%= @order.total %>
+        </p>
 
-<p>
-  <strong>Query status:</strong>
-  <%= @order.status %>
-</p>
+        <p>
+          <strong>Delivery Date:</strong>
+          <%= @order.deliveryDate %>
+        </p>
 
-<%= link_to 'Back to shopping!', supplies_path %>
-<%= link_to 'Back', orders_path %>
+        <p>
+          <strong>Query status:</strong>
+          <%= @order.status %>
+        </p>
+
+        <%= link_to 'Back to shopping!', supplies_path, class: 'btn btn-info' %>
+        <%= link_to 'Back', orders_path, class: 'btn btn-default' %>
+      </div>
+    </div>
+  </div>
+</div>

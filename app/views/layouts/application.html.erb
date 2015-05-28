@@ -9,17 +9,46 @@
 <body>
 
 <% if user_signed_in? %>
-<header>
-  <span>Hello, <%= current_user.email%></span>
-  <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-  <span> Admin: <%= current_user.admin? %></span>
-  <% if !current_user.discount.nil? %>
-    <span> Discount: <%= current_user.discount %>%</span>
-  <% end %>
-</header>
-<% end %>
 
-<%= yield %>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">E-Commerce</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Supplies', supplies_path %></li>
+          <li><%= link_to 'Orders', orders_path %></li>
+          <% if current_user.admin? %>
+            <li><%= link_to 'Users', users_path %></li>
+          <% end %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="user-hello">
+            Hello, <%= current_user.email %>
+            <% if current_user.admin? %>
+                ( Administrator )
+            <% end %>
+          </li>
+          <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <form action="">
+      <fieldset></fieldset>
+      <fieldset></fieldset>
+      <fieldset></fieldset>
+    </form>
+
+
+<% end %>
+<section class="content">
+  <%= yield %>
+</section>
+
 
 </body>
 </html>

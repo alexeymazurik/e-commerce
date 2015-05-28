@@ -1,19 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel-default panel">
+      <div class="panel-heading">
+        <h4>Supply # <%= @supply.id %></h4>
+      </div>
+      <div class="panel-body">
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @supply.title %>
-</p>
+        <p>
+          <strong>Title:</strong>
+          <%= @supply.title %>
+        </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @supply.description %>
-</p>
+        <p>
+          <strong>Description:</strong>
+          <%= @supply.description %>
+        </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @supply.price %>
-</p>
+        <p>
+          <strong>Price:</strong>
+          <%= @supply.price %> UAH
+        </p>
 
-<%= link_to 'Edit', edit_supply_path(@supply) %> |
-<%= link_to 'Back', supplies_path %>
+        <%= link_to 'Edit', edit_supply_path(@supply), class: 'btn btn-info' %>
+        <%= link_to 'Back', supplies_path, class: 'btn btn-default' %>
+      </div>
+    </div>
+  </div>
+</div>

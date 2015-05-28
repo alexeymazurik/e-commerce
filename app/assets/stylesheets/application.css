@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap.min
+ *= require bootstrap-select.min
  */
 
 body {
@@ -19,17 +21,47 @@ body {
     padding: 0;
 }
 
-header {
-    padding: 10px;
-    background: #979797;
-    color: #fff;
+.content {
+    margin: 60px 10px;
 }
 
-header a {
-    color: white;
+.user-hello {
+    line-height: 50px;
+    vertical-align: middle;
 }
 
-table, td, th {
-    border: 1px solid black;
+#notice {
+    color: #12a32a;
+    font-size: 1.2em;
 }
 
+table tr td:last-child {
+    width: 300px;
+    vertical-align: middle;
+}
+
+/*header {*/
+    /*padding: 10px;*/
+    /*height: 40px;*/
+    /*vertical-align: middle;*/
+    /*background: #c1c1c1;*/
+    /*color: #fff;*/
+/*}*/
+
+/*header a {*/
+    /*color: white;*/
+/*}*/
+
+/*table, td, th {*/
+    /*border: 1px solid black;*/
+/*}*/
+
+/*header .left {*/
+    /*display: inline-block;*/
+    /*float:left;*/
+/*}*/
+
+/*header .right {*/
+    /*display: inline-block;*/
+    /*float:right;*/
+/*}*/

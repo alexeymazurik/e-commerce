@@ -1,39 +1,63 @@
-<h2>Confirm your order</h2>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel-default panel">
+      <div class="panel-heading">
+        <h4>Confirm your order</h4>
+      </div>
+      <div class="panel-body">
 
-<p>
-  <strong>Supply title: </strong>
-  <%= @supply.title %>
-</p>
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @supply.price %> UAH
-</p>
+        <p>
+          <strong>Supply title: </strong>
+          <%= @supply.title %>
+        </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @user.email %>
-</p>
+        <p>
+          <strong>Price:</strong>
+          <%= @supply.price %> UAH
+        </p>
 
-<p>
-  <strong>Delivery Date:</strong>
-  <%= Date.today + 1 %>
-</p>
+        <p>
+          <strong>User:</strong>
+          <%= @user.email %>
+        </p>
 
-<p>
-  <strong>Status:</strong>
-  Pending
-</p>
+        <p>
+          <strong>Delivery Date:</strong>
+          <%= Date.today + 1 %>
+        </p>
 
-<%= form_for(@order, :url=>{:action=>'create'}) do |f| %>
-        <%= f.hidden_field :supply_id, :value => @supply.id %>
-        <%= f.hidden_field :status, :value => "Pending" %>
-        <%= f.hidden_field :deliveryDate, :value => Date.today + 1 %>
+        <p>
+          <strong>Status:</strong>
+          Pending
+        </p>
 
-        <%= f.label :count %> <br/>
-        <%= f.text_field :count %>
 
-        <div class="actions">
-          <%= f.submit 'Create' %>
-        </div>
-<% end %>
+        <%= form_for(@order, :url=>{:action=>'create'}) do |f| %>
+            <%= f.hidden_field :supply_id, :value => @supply.id %>
+            <%= f.hidden_field :status, :value => "Pending" %>
+            <%= f.hidden_field :deliveryDate, :value => Date.today + 3 %>
+
+            <div class="form-group">
+              <%= f.label :count, class: 'control-label' %> <br/>
+              <%= f.number_field :count, class: 'form-control', type: 'number' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.submit 'Create', :class => 'btn btn-primary' %>
+              <%= link_to 'Back', supplies_path, class: 'btn btn-default' %>
+            </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

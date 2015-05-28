@@ -4,6 +4,9 @@ Rails.application.routes.draw do
       sessions: 'users/sessions'
   }
 
+  get 'orders/info' => 'orders#info'
+  get 'supplies/info' => 'supplies#info'
+
   resources :supplies
 
   resources :orders

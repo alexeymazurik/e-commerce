@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery-2.1.1.min
+//= require bootstrap.min
+//= require bootstrap-select.min.js
 //= require_tree .
+
+
+$(function(){
+    $('.selectpicker').selectpicker();
+});

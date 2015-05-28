@@ -1,37 +1,44 @@
-<h1>Listing users</h1>
+<div class="content">
 
-<table>
-    <thead>
-    <tr>
+
+  <div class="container">
+    <h1>Users</h1>
+
+    <table class="table table-bordered">
+      <thead>
+      <tr>
         <th>ID</th>
         <th>Email</th>
         <th>Sign In Count</th>
         <th>Last Sign In At</th>
         <th>Admin</th>
         <th>Discount</th>
-    </tr>
-    </thead>
+      </tr>
+      </thead>
 
-    <tbody>
-    <% @users.each do |user| %>
-    <tr>
-        <td><%= user.id %></td>
-        <td><%= user.email %></td>
-        <td><%= user.sign_in_count %></td>
-        <td><%= user.last_sign_in_at %></td>
-        <td><%= user.admin %></td>
-        <td>
-          <% if user.discount.nil? %>
-            None
-          <% else %>
-            <%= user.discount %> %
-          <% end %>
-        </td>
-    </tr>
-    <% end %>
-    </tbody>
-</table>
+      <tbody>
+      <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.email %></td>
+            <td><%= user.sign_in_count %></td>
+            <td><%= user.last_sign_in_at %></td>
+            <td><%= user.admin %></td>
+            <td>
+              <% if user.discount.nil? %>
+                  None
+              <% else %>
+                  <%= user.discount %> %
+              <% end %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <br>
+  </div>
 
-<br>
-<%= link_to 'Supplies', orders_path %>
-<%= link_to 'Orders', orders_path %>
+
+
+
+</div>
